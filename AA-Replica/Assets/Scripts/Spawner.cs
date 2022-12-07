@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rotator : MonoBehaviour
+public class Spawner : MonoBehaviour
 {
-    public float speedRotate = 100f;
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0f, 0f, speedRotate * Time.deltaTime);
-
+        
     }
 }
