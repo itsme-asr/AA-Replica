@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class pin : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    private bool isPinned = false;
+    public float speed = 1f;
+    public Rigidbody2D rb;
     // Update is called once per frame
     void Update()
     {
-        
+        if (!isPinned)
+        {
+            rb.MovePosition(rb.position + Vector2.up * speed * Time.deltaTime);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.tag == "Rotator")
+        {
+            transform.SetParent(col.transform);
+            isPinned = true;
+
+        }
     }
 }
