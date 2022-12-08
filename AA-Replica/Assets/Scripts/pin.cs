@@ -24,5 +24,9 @@ public class pin : MonoBehaviour
             isPinned = true;
 
         }
+        else if (col.tag == "Pin")
+        {
+            FindObjectOfType<GameManager>().endGame();
+        }
     }
 }
