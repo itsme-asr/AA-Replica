@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    public GameObject pinPreFab;
     void Update()
     {
-        
+        if (Input.GetButtonDown("Fire1"))
+        {
+            spawnPin();
+        }
+
+    }
+
+    private void spawnPin()
+    {
+        Instantiate(pinPreFab, transform.position, transform.rotation);
     }
 }
