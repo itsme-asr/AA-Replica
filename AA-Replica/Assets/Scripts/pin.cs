@@ -21,6 +21,7 @@ public class pin : MonoBehaviour
         if (col.tag == "Rotator")
         {
             transform.SetParent(col.transform);
+            Score.pinCount++;
             isPinned = true;
 
         }
